@@ -10,12 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unzip project
-        run: unzip -q XPlayer*.zip
+        run: for f in $(ls XPlayer*.zip | sort); do unzip -q -o "$f"; done
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
-      - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.9
