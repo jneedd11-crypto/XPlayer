@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unzip project
-                run: for f in $(ls XPlayer*.zip | sort); do unzip -q -o "$f"; done
+              run: for f in $(ls XPlayer*.zip | sort); do unzip -q -o "$f"; done
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
